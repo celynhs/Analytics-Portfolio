@@ -51,9 +51,9 @@ A pricing analysis of 678,013 French motor insurance policies, approached as a p
 
 ## 2. HR Analytics: Workforce, Turnover and Attrition Risk
 
-![Risk tiers: share of employees vs share of expected attrition cost](https://raw.githubusercontent.com/celynhs/HR-Analytics/main/images/hr_risk_tier_cost.png)
+![Risk tiers: share of employees vs share of expected attrition cost](https://raw.githubusercontent.com/celynhs/HR-Analytics/main/images/pbi_overview.png)
 
-**Tech stack:** SQL (Google BigQuery) · Python (pandas, NumPy, SciPy, statsmodels, scikit-learn, Matplotlib, Seaborn)
+**Tech stack:** SQL (Google BigQuery) · Looker (Google Data Studio) · Python (pandas, NumPy, SciPy, statsmodels, scikit-learn, Matplotlib, Seaborn)
 
 **Repository:** [github.com/celynhs/HR-Analytics](https://github.com/celynhs/HR-Analytics)
 
