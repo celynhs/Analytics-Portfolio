@@ -10,10 +10,10 @@ This portfolio collects my end-to-end analytics projects. Each one starts from a
 
 ## Projects at a glance
 
-| Project | Business area | Python | SQL | Power BI | Repository |
+| Project | Business area | Python | SQL | Power BI / Looker | Repository |
 |---|---|:---:|:---:|:---:|---|
 | [Motor Insurance Pricing: Risk Modelling and Cross-Subsidy](#1-motor-insurance-pricing-risk-modelling-and-cross-subsidy) | Finance / Risk | ✅ | | ✅ | [Insurance-Analysis](https://github.com/celynhs/Insurance-Analysis) |
-| [HR Analytics: Workforce, Turnover and Attrition Risk](#2-hr-analytics-workforce-turnover-and-attrition-risk) | Human Resources | ✅ | ✅ | | [HR-Analytics](https://github.com/celynhs/HR-Analytics) |
+| [HR Analytics: Workforce, Turnover and Attrition Risk](#2-hr-analytics-workforce-turnover-and-attrition-risk) | Human Resources | ✅ | ✅ | ✅ | [HR-Analytics](https://github.com/celynhs/HR-Analytics) |
 | [E-commerce Sales Analysis](#3-e-commerce-sales-analysis) | Sales / Marketing | ✅ | | | [Sales-Analysis](https://github.com/celynhs/Sales-Analysis) |
 
 **Skills shown across the projects:** data cleaning and validation · exploratory and statistical analysis · hypothesis testing and effect sizes · regression and GLMs · machine learning (logistic regression, gradient boosting) · customer and risk segmentation · cost and scenario simulation · dashboard design and DAX · turning analysis into business recommendations
