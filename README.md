@@ -4,7 +4,7 @@ Hi, I'm Jocelin, a data analyst with a background in Actuarial Science and exper
 
 This portfolio collects my end-to-end analytics projects. Each one starts from a real business problem, works through data cleaning and validation, analysis and modelling, and ends with findings and recommendations that a non-technical manager could act on.
 
-📧 celinhelsa28@gmail.com · 💼 [LinkedIn](https://www.linkedin.com/in/jocelin-helsa-418092264) · 🎓 [Certificates](https://github.com/celynhs/Portfolio-Certificate)
+📧 celinhelsa28@gmail.com · 💼 [LinkedIn](https://www.linkedin.com/in/jocelin-helsa-418092264) · 🎓 [Certificates](https://github.com/celynhs/Portfolio-Certificate) · 📄 [CV (PDF)](https://github.com/celynhs/Analytics-Portfolio/blob/main/Jocelin_Helsa_CV.pdf)
 
 ---
 
@@ -113,4 +113,4 @@ An analysis of 50,000 orders from an online electronics retailer (January 2024 �
 
 I'm open to data analyst roles, including remote positions. Feel free to reach out:
 
-📧 celinhelsa28@gmail.com · 💼 [LinkedIn](https://www.linkedin.com/in/jocelin-helsa-418092264)
+📧 celinhelsa28@gmail.com · 💼 [LinkedIn](https://www.linkedin.com/in/jocelin-helsa-418092264) · 📄 [CV (PDF)](https://github.com/celynhs/Analytics-Portfolio/blob/main/Jocelin_Helsa_CV.pdf)
