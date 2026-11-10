@@ -10,13 +10,14 @@ This portfolio collects my end-to-end analytics projects. Each one starts from a
 
 ## Projects at a glance
 
-| Project | Business area | Python | SQL | Power BI / Looker | Repository |
-|---|---|:---:|:---:|:---:|---|
-| [Motor Insurance Pricing: Risk Modelling and Cross-Subsidy](#1-motor-insurance-pricing-risk-modelling-and-cross-subsidy) | Finance / Risk | ✅ | | ✅ | [Insurance-Analysis](https://github.com/celynhs/Insurance-Analysis) |
-| [HR Analytics: Workforce, Turnover and Attrition Risk](#2-hr-analytics-workforce-turnover-and-attrition-risk) | Human Resources | ✅ | ✅ | ✅ | [HR-Analytics](https://github.com/celynhs/HR-Analytics) |
-| [E-commerce Sales Analysis](#3-e-commerce-sales-analysis) | Sales / Marketing | ✅ | | | [Sales-Analysis](https://github.com/celynhs/Sales-Analysis) |
+| Project | Business area | Python | SQL | Excel | Power BI / Looker | Repository |
+|---|---|:---:|:---:|:---:|:---:|---|
+| [Motor Insurance Pricing: Risk Modelling and Cross-Subsidy](#1-motor-insurance-pricing-risk-modelling-and-cross-subsidy) | Finance / Risk | ✅ | | | ✅ | [Insurance-Analysis](https://github.com/celynhs/Insurance-Analysis) |
+| [HR Analytics: Workforce, Turnover and Attrition Risk](#2-hr-analytics-workforce-turnover-and-attrition-risk) | Human Resources | ✅ | ✅ | | ✅ | [HR-Analytics](https://github.com/celynhs/HR-Analytics) |
+| [E-commerce Sales Analysis](#3-e-commerce-sales-analysis) | Sales / Marketing | ✅ | | | | [Sales-Analysis](https://github.com/celynhs/Sales-Analysis) |
+| [Social Impact Evaluation: Youth Vocational Training Program](#4-social-impact-evaluation-youth-vocational-training-program) | Nonprofit / Social Impact (MEL) | | ✅ | ✅ | ✅ | [Impact-evaluation](https://github.com/celynhs/Impact-evaluation) |
 
-**Skills shown across the projects:** data cleaning and validation · exploratory and statistical analysis · hypothesis testing and effect sizes · regression and GLMs · machine learning (logistic regression, gradient boosting) · customer and risk segmentation · cost and scenario simulation · dashboard design and DAX · turning analysis into business recommendations
+**Skills shown across the projects:** survey design (KoboToolbox) · data cleaning and validation with audit logs · impact evaluation (difference-in-differences, power analysis) · exploratory and statistical analysis · hypothesis testing and effect sizes · regression and GLMs · machine learning (logistic regression, gradient boosting) · customer and risk segmentation · cost and scenario simulation · dashboard design and DAX · turning analysis into business recommendations
 
 ---
 
@@ -106,6 +107,34 @@ An analysis of 50,000 orders from an online electronics retailer (January 2024 �
 - **65% of orders are discounted, costing 246K, but discounts don't make customers buy more.**
 
 **Recommendation:** verify the February 2026 drop with the data team, fix order–payment reconciliation, win back high-value customers who have gone quiet, and cut blanket discounting (testing any targeted discount first).
+
+## 4. Social Impact Evaluation: Youth Vocational Training Program
+
+![Looker Data Studio dashboard: Impact Overview](https://raw.githubusercontent.com/celynhs/Impact-evaluation/main/images/dashboard_page1.png)
+
+**Tech stack:** KoboToolbox (XLSForm) · Excel (formula-based checks, data validation, conditional formatting) · SQL (Google BigQuery) · Looker (Google Data Studio)
+
+**Repository:** [github.com/celynhs/Impact-evaluation](https://github.com/celynhs/Impact-evaluation)
+
+### What the project is about
+An impact evaluation of a youth vocational training program in East Java, Indonesia, approached as the MEL (Monitoring, Evaluation and Learning) analyst for the NGO running it. The program team and its donors want to know whether the training works, for whom, and what to improve before the next cohort. I designed a 39-question baseline and endline survey in KoboToolbox, built a reusable Excel template that runs 15 quality checks and logs every cleaning decision, measured impact in BigQuery by comparing 120 trained youth with 80 waitlisted applicants (difference-in-differences), and built a Looker Data Studio dashboard and a short report for the program team. The data is synthetic, with the errors a real field team makes deliberately included.
+
+### Key business questions
+1. Were trained and waitlisted youth comparable before the training?
+2. Did the training improve life skills, and which skills improved most?
+3. Did trained youth look for work more actively, and did more of them find good jobs?
+4. Who benefited most, and which training tracks need improvement?
+5. Is the sample large enough to trust the results?
+
+### Key insights
+- **The data had to be cleaned before it could be trusted.** 15 automated checks flagged 55 of 391 submissions (duplicates, mistyped IDs, a wrong tablet date, income typos, one fabricated interview). Every flag has a logged decision, leaving 383 clean interviews.
+- **Life skills improved clearly:** trained youth gained **0.44 points more** than the comparison group on a 1–4 scale (95% CI 0.36 to 0.52), and **98% of them improved**, against 60% of the comparison group.
+- **Job search became more active and more successful:** 2.5 more applications a year, and **twice as many job offers per application** (15.7% vs 7.9%).
+- **Employment rose 24.5 points for trained youth vs 9.6 for the comparison group, but the 15-point difference is not yet statistically significant**, and trained youth were no more likely to be in formal jobs.
+- **Garment & Tailoring is a paradox:** the largest employment gain (15% → 55%), but the lowest relevance rating and a negative Net Promoter Score.
+- **The sample is too small to confirm the employment effect:** with 183 youth, only an effect of about 29 points would reliably show; confirming 15 points would need about **675 youth**.
+
+**Recommendation:** keep and scale the life-skills curriculum, strengthen the step from job search to placement and job quality, review the Garment & Tailoring and Hospitality tracks with employers, and plan a larger follow-up to confirm the employment effect.
 
 ---
 
