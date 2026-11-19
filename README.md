@@ -16,8 +16,9 @@ This portfolio collects my end-to-end analytics projects. Each one starts from a
 | [HR Analytics: Workforce, Turnover and Attrition Risk](#2-hr-analytics-workforce-turnover-and-attrition-risk) | Human Resources | ✅ | ✅ | | ✅ | [HR-Analytics](https://github.com/celynhs/HR-Analytics) |
 | [E-commerce Sales Analysis](#3-e-commerce-sales-analysis) | Sales / Marketing | ✅ | | | | [Sales-Analysis](https://github.com/celynhs/Sales-Analysis) |
 | [Social Impact Evaluation: Youth Vocational Training Program](#4-social-impact-evaluation-youth-vocational-training-program) | Nonprofit / Social Impact (MEL) | | ✅ | ✅ | ✅ | [Impact-evaluation](https://github.com/celynhs/Impact-evaluation) |
+| [Value at Risk and Stress Testing: Mexican Multi-Asset Portfolio](#5-value-at-risk-and-stress-testing-mexican-multi-asset-portfolio) | Finance / Market Risk | ✅ | ✅ | | | [VaR-Stress-Testing](https://github.com/celynhs/VaR-Stress-Testing) |
 
-**Skills shown across the projects:** survey design (KoboToolbox) · data cleaning and validation with audit logs · impact evaluation (difference-in-differences, power analysis) · exploratory and statistical analysis · hypothesis testing and effect sizes · regression and GLMs · machine learning (logistic regression, gradient boosting) · customer and risk segmentation · cost and scenario simulation · dashboard design and DAX · turning analysis into business recommendations
+**Skills shown across the projects:** survey design (KoboToolbox) · data cleaning and validation with audit logs · impact evaluation (difference-in-differences, power analysis) · exploratory and statistical analysis · hypothesis testing and effect sizes · regression and GLMs · machine learning (logistic regression, gradient boosting) · customer and risk segmentation · cost and scenario simulation · market risk (VaR, Expected Shortfall, Monte Carlo simulation, backtesting, stress testing) · data collection from REST APIs · dashboard design and DAX · turning analysis into business recommendations
 
 ---
 
@@ -108,6 +109,8 @@ An analysis of 50,000 orders from an online electronics retailer (January 2024 �
 
 **Recommendation:** verify the February 2026 drop with the data team, fix order–payment reconciliation, win back high-value customers who have gone quiet, and cut blanket discounting (testing any targeted discount first).
 
+---
+
 ## 4. Social Impact Evaluation: Youth Vocational Training Program
 
 ![Looker Data Studio dashboard: Impact Overview](https://raw.githubusercontent.com/celynhs/Impact-evaluation/main/images/dashboard_page1.png)
@@ -135,6 +138,34 @@ An impact evaluation of a youth vocational training program in East Java, Indone
 - **The sample is too small to confirm the employment effect:** with 183 youth, only an effect of about 29 points would reliably show; confirming 15 points would need about **675 youth**.
 
 **Recommendation:** keep and scale the life-skills curriculum, strengthen the step from job search to placement and job quality, review the Garment & Tailoring and Hospitality tracks with employers, and plan a larger follow-up to confirm the employment effect.
+
+## 5. Value at Risk and Stress Testing: Mexican Multi-Asset Portfolio
+
+![Historical crises replayed on today's portfolio](https://raw.githubusercontent.com/celynhs/VaR-Stress-Testing/main/images/historical_stress_by_leg.png)
+
+**Tech stack:** Python (pandas, NumPy, SciPy, Matplotlib, yfinance, requests) · SQL (SQLite) · Banxico SIE REST API
+
+**Repository:** [github.com/celynhs/VaR-Stress-Testing](https://github.com/celynhs/VaR-Stress-Testing)
+
+### What the project is about
+A market risk analysis of a MXN 100M portfolio of Mexican government bonds (40%), Mexican stocks (30%) and US dollars (30%), approached as a risk analyst at a Mexican bank treasury or pension fund. Using 20 years of daily market data (2007–2026) collected from the Banxico API, Yahoo Finance and Investing.com, I validated the data with six quality checks, measured how much the portfolio could lose on a normal bad day (Value at Risk and Expected Shortfall, three methods), backtested the models over 18 years against Basel standards, stress tested the portfolio against real and hypothetical crises, and compared alternative portfolio mixes.
+
+### Key business questions
+1. How do Mexican stocks, the peso and bond yields behave, and how do they move together in calm and crisis markets?
+2. How much could the portfolio lose on a normal bad day, and which position drives the risk?
+3. Would the risk models (VaR) have worked from 2008 to 2026?
+4. How much would today's portfolio lose if a past or plausible crisis happened now?
+5. Would a different allocation reduce risk?
+
+### Key insights
+- **The data needed careful validation:** 478 weekend rows, a six-week gap in the bond data and one bad price were found and handled, so that extreme days in the analysis are real market moves.
+- **On a normal bad day, the portfolio could lose MXN 0.69M–0.94M** (1-day 99% VaR), well within its MXN 1.5M limit. Holding the three assets together **halves** the risk, and **stocks drive 69% of it** with 30% of the capital.
+- **The standard normal-distribution model fails the backtest:** 70 breaches at 99% vs 46 expected over 4,600 days, plus a Basel red-zone year. A fat-tailed (Student-t) model gets the breach count right, and a fast-reacting (EWMA) model flags crises earliest.
+- **Crisis losses are up to four times larger than VaR.** A repeat of 2008 would cost **MXN 8.44M in two weeks**, and if stocks and bonds fall while the peso strengthens, the loss reaches **MXN 12.22M (12.2% of the portfolio)**.
+- **The US dollar position protects against global crises but much less against a local one** (2018 Mexico sell-off). Without it, the worst crisis loss would almost double.
+- **Moving 10% from stocks into US dollars (40/20/40) lowers risk on every measure**, cutting VaR by 20% and the 2008 stress loss from MXN 8.44M to MXN 5.33M.
+
+**Recommendation:** rebalance to 40/20/40, replace the normal-distribution VaR with a fat-tailed, fast-reacting model, add a stress loss limit alongside the daily VaR limit, protect against a hedge failure with monthly stress tests and direct hedges, and use EWMA VaR as an early-warning signal.
 
 ---
 
